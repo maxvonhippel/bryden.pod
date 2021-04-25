@@ -77,16 +77,18 @@ There are a few good arguments for this:
   that is, they are exactly the numbers which
   are cardinalities of finite sets
 \marginnote{\footnotesize
-A \emph{set} is an unordered list of symbols with no duplicates, which does not
-contain itself.  So, the infamous ``set of all sets'' is not
-a set at all, as it would have to contain itself.
 The Russell-Zermelo paradox (discovered around 1903)
-considered the set of all sets that do not contain
+considered the ``set'' of all sets that do not contain
 themselves.  This strange set is apparently a member of itself, 
 if and only if it is not a member of itself.
-ZFC is a set of axioms under which the paradox disappears, because
-the pathological set (and others like it) need not exist in the first
-place.~\cite{russel.paradox}
+In the reasoning systems ZF (Zermelo Fraenkel) and ZFC (with Choice) 
+the paradox disappears, because the word ``set'' is redefined to exclude 
+such pathological examples.~\cite{russel.paradox}
+Although ZF and ZFC are probably the most popular modern foundations for
+mathematics, a growing number of researchers prefer type-theoretic foundations
+such as Homotopy Type Theory (HoTT), which seem more ``natural'' for 
+reasoning with a theorem-prover like \textsc{Coq} about concepts like 
+compiler correctness.
 } 
   (modern mathematics is predicated on axiomatic set theory, 
   typically using the ZF or ZFC axioms).
@@ -96,20 +98,34 @@ In set theory, one of the axioms is that the intersection of two sets should
   which contains no elements and has cardinality $0$.  
   So if $\N$ is the set of cardinalities of finite sets, it must include zero.
 
-Another argument has to do with arithmetic: the natural numbers are closed under addition and multiplication, and the element $1$ is a {\em multiplicative identity} as it satisfies $1\cdot n=n\cdot 1=n$ for every natural $n$.  From that point of view, it makes sense that $\N$ should also contain an {\em additive identity}, which satisfies $x + n = n + x = n$ for all naturals $n$.  Of course, $x=0$ is the unique value that works!
+Another argument has to do with arithmetic: the natural numbers are closed under 
+addition and multiplication, and the element $1$ is a 
+{\em multiplicative identity} as it satisfies $1\cdot n=n\cdot 1=n$ for every 
+natural $n$.  From that point of view, it makes sense that $\N$ should also 
+contain an {\em additive identity}, which satisfies $x + n = n + x = n$ for 
+all naturals $n$.  Of course, $x=0$ is the unique value that works!
 
 This second argument will return as a central, key theme: 
 \begin{philosophy}
-	Mathematics often isolates some property that we would like a number to satisfy, and if we don't already have any number to satisfy it, we {\em make} a new number and larger number system to verify the property. 
+	Mathematics often isolates some property that we would like a number to 
+  satisfy, and if we don't already have any number to satisfy it, we {\em make} 
+  a new number and larger number system to verify the property. 
 \end{philosophy}
 
 Such is the genesis of the integers
-$$\Z:=\{\ldots -3,-2,-1,0,1,2,3,\ldots\},$$
-consisting of the naturals (with zero!) and their negatives.  It took civilization some time to accept negative quantities as ``numbers" in their own right,
-but the above philosophy plays a critical role here.  Addition is fundamental operations of the number system $\N$,
-so questions like ``is there a number $x$ for which $x+3=5$" arise naturally.  Of course, in this case $x=2$ is the unique solution.
-But when we reverse the roles of $3$ and $5$, as in the equation $x+5=3$, suddenly there is {\em no solution} if we only allow ourselves to 
-work in the natural numbers!  So a solution is {\em created}, and called $-2$, and it satisfies the {\em defining} attribute that $2 + (-2) = 0$.
+\marginnote{\footnotesize Alternatively denoted $\mathbb{Z}$.}
+\[\Z:=\{\ldots -3,-2,-1,0,1,2,3,\ldots\},\]
+% -- MAX MADE IT THIS FAR
+consisting of the naturals (with zero!) and their negatives.  
+It took civilization some time to accept negative quantities as ``numbers" in 
+their own right, but the above philosophy plays a critical role here.  
+Addition is fundamental operations of the number system $\N$,
+so questions like ``is there a number $x$ for which $x+3=5$" arise naturally.  
+Of course, in this case $x=2$ is the unique solution.
+But when we reverse the roles of $3$ and $5$, as in the equation $x+5=3$, 
+suddenly there is {\em no solution} if we only allow ourselves to 
+work in the natural numbers!  So a solution is {\em created}, and called $-2$, 
+and it satisfies the {\em defining} attribute that $2 + (-2) = 0$.
 
 I don't think that negative integers {\em exist} in the same way that positive integers do: you can {\em show} me $1$ apple, you can hold it in your hand,
 you can give it to me and I can take a bite out of it.  But you can't do any of that with $-1$ apples, and one has to invoke notions of debt (already a most abstract notion!) to make ``real world" sense of negative numbers. One of the central points I'd like to make is that mathematics is {\em best}---most complete, powerful, useful, beautiful---when we don't worry so much about ``real world" meaning or application of mathematical ideas or theories.  That is a counterintuitive idea, 
