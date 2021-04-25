@@ -39,17 +39,6 @@ runcolor={},	% color	filecolor Color for run links (launch annotations).
 urlcolor={bwgreen}, %	 color	magenta	Color for linked URLs.
 } 
 
-
-
-%   \topmargin=-0.2in
-%   \oddsidemargin=-0.1in
- %  \evensidemargin=-0.1in
-%   \textwidth=6.7in
- %  \textheight=8.6in
- %  \headheight=0.075in
-%   \headsep=-1in
-   
-
 %\xymatrixcolsep{2.8pc}
 \CompileMatrices
 \entrymodifiers={+!!<0pt,\fontdimen22\textfont2>}
@@ -64,13 +53,6 @@ urlcolor={bwgreen}, %	 color	magenta	Color for linked URLs.
 \DeclareFontFamily{OT1}{pzc}{}
 \DeclareFontShape{OT1}{pzc}{n}{it}{<->s*[2.2]pzc}{}
 \DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{b}{sl}
-
-%\DeclareFontFamily{OT1}{pzc}{}
-%\DeclareFontShape{OT1}{pzc}{m}{it}{<-> s * [0.900] pzcmi7t}{}
-%\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
-
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % These commands allow one to make roman numerals
@@ -419,14 +401,14 @@ modular arithmetic, and $p$-adic numbers.  All of these systems of numbers play 
 {\em number theory} which, at its core, is the study of $\N$ and its properties.  The goals of this discussion are:
 \begin{enumerate}
 	\item Provide a mathematical and historical overview of these different number systems and their development.
-	\item Hilight the challenges and obstacles that mathematicians and civilizations faced with new concepts of number.
+	\item Highlight the challenges and obstacles that mathematicians and civilizations faced with new concepts of number.
 	\item Give the listener a sense of why these various systems of numbers are interesting and important.
 	\item Touch on some of the important unsolved problems in modern number theory, and how these different number systems play a role.
 \end{enumerate} 
 A good overview reference for some of the history is this \href{https://en.wikipedia.org/wiki/Number}{Wikipedia article}.
 I am afraid that I know very little of the {\em history} of the ideas that I will survey below, though I do know that this history is
 rich and interesting.  As such, I think I will need quite a bit of help with goals 1--2 above, and will focus on realizing goals 3 and 4 in what follows.
-I am hopeful that the outline below will provide enough of a roadmap and enough key terms that some searches on Wikipedia 
+I am hopeful that the outline below will provide enough of a road-map and enough key terms that some searches on Wikipedia 
 and the like will amply fill out the historical side of things, and that together we can have an informative and engaging discussion
 about both the mathematics and its history.
 
@@ -438,15 +420,15 @@ $$
 \N:=\{0,1,2,3,\ldots\}
 $$
 There are a few good arguments for this: the natural numbers are the ``counting" numbers, that is, they are exactly the numbers which
-are cardinalities of finite sets (modern mathamatics is predicated on axiomatic set theory, typically using the ZF or ZFC axioms).
+are cardinalities of finite sets (modern mathematics is predicated on axiomatic set theory, typically using the ZF or ZFC axioms).
 In set theory, one of the axioms is that the intersection of two sets should always be a set, and that necessitates having the {\em empty set}, $\emptyset$,
 which contains no elements and has cardinality $0$.  So if $\N$ is the set of cardinalities of finite sets, it must include zero.
 
-Another argumenth has to do with arithmetic: the natural numbers are closed under addition and multiplication, and the element $1$ is a {\em multiplicative identity} as it satisfies $1\cdot n=n\cdot 1=n$ for every natural $n$.  From that point of view, it makes sense that $\N$ should also contain an {\em additive identity}, which satisfies $x + n = n + x = n$ for all naturals $n$.  Of course, $x=0$ is the unique value that works!
+Another argument has to do with arithmetic: the natural numbers are closed under addition and multiplication, and the element $1$ is a {\em multiplicative identity} as it satisfies $1\cdot n=n\cdot 1=n$ for every natural $n$.  From that point of view, it makes sense that $\N$ should also contain an {\em additive identity}, which satisfies $x + n = n + x = n$ for all naturals $n$.  Of course, $x=0$ is the unique value that works!
 
 This second argument will return as a central, key theme: 
 \begin{philosophy}
-	Mathamatics often isolates some property that we would like a number to satisfy, and if we don't already have any number to satisfy it, we {\em make} a new number and larger number system to verify the property. 
+	Mathematics often isolates some property that we would like a number to satisfy, and if we don't already have any number to satisfy it, we {\em make} a new number and larger number system to verify the property. 
 \end{philosophy}
 
 Such is the genesis of the integers
@@ -457,7 +439,7 @@ so questions like ``is there a number $x$ for which $x+3=5$" arise naturally.  O
 But when we reverse the roles of $3$ and $5$, as in the equation $x+5=3$, suddenly there is {\em no solution} if we only allow ourselves to 
 work in the natural numbers!  So a solution is {\em created}, and called $-2$, and it satisfies the {\em defining} attribute that $2 + (-2) = 0$.
 
-I don't think that negative integers {\em exist} in the same way that postive integers do: you can {\em show} me $1$ apple, you can hold it in your hand,
+I don't think that negative integers {\em exist} in the same way that positive integers do: you can {\em show} me $1$ apple, you can hold it in your hand,
 you can give it to me and I can take a bite out of it.  But you can't do any of that with $-1$ apples, and one has to invoke notions of debt (already a most abstract notion!) to make ``real world" sense of negative numbers. One of the central points I'd like to make is that mathematics is {\em best}---most complete, powerful, useful, beautiful---when we don't worry so much about ``real world" meaning or application of mathematical ideas or theories.  That is a counterintuitive idea, 
 as the real world has informed and spurned so much important mathematics, but the mathematics itself develops best untethered from these shackles of its origins.
 
@@ -473,7 +455,7 @@ for all $x$ and $y$.  There are lots of important examples of non-commutative ri
 
 Being a ring, the integers are closed under addition and multiplication, and every integer has an additive inverse, but very fee integers
 have {\em multiplicative} inverses.  Said differently, we can solve equations like $4x = 12$ because 12 is an integer multiple of 4, 
-but change that 12 to a 10 and we are oit of luck!  So it is reasonable to create a new number system in which every equation $mx=n$
+but change that 12 to a 10 and we are out of luck!  So it is reasonable to create a new number system in which every equation $mx=n$
 with integers $m$ and $n$ has a solution.  Actually, there is no such number system, because having a solution to $0\cdot x = 1$
 causes big problems, and many of the desirable properties of a ``number system" break down.  For example, if $x$ satisfies the above equation,
 so does $x+n$ for any integer $n$, so either there are infinitely many $x$'s that solve the equation, or we have to accept that $x=x+n$ for all $n$,
@@ -499,7 +481,7 @@ The advent of the decimal system allows us to represent rationals as decimals, l
 and there is a rather nice characterization of which decimal expansions are rational numbers: 
 
 \begin{proposition}\label{rat}
-	A decimal expansion comes from a rational number if and only if it either terminates, or is eventually repeeating.
+	A decimal expansion comes from a rational number if and only if it either terminates, or is eventually repeating.
 \end{proposition}
 
 One confounding feature of decimals is that, just like a rational number can have many representations as a fraction ($1/2 = 2/4 = 3/6$),
@@ -507,10 +489,10 @@ so too a number can have more than representation as a decimal expansion!  A cla
 $$
   1.\overline{0} = 0.\overline{9}.
 $$ 
-This examle is really frustrating for many people, and has resulted in more than one shouting match and even tears. 
+This example is really frustrating for many people, and has resulted in more than one shouting match and even tears. 
 For whatever reason, many people {\em believe} that every number has a unique decimal expansion, possibly because
 we are taught from an early age to equate the concepts of {\em number} and {\em decimal expansion}.  But it just isn't true,
-much in the same way that rational numbers don't have a unique representation as a fraction.  In gradeschool, I one of my math teachers
+much in the same way that rational numbers don't have a unique representation as a fraction.  In grade-school, one of my math teachers
 {\em insisted} that $1$ and $0.\overline{9}$ are {\em different} numbers, and no amount of reasoning would convince her otherwise.  But if you
 admit that decimal expansions represent numbers, and therefore must obey the basic laws of arithmetic (these are axiomatized!), then
 $1=0.\overline{9}$ is forced upon you, since:
@@ -525,7 +507,7 @@ and subtracting $x$ from this lops off the infinite repeating tail of $9's$.  Bu
 
 With Proposition \ref{rat} in mind, it is natural to ask what numbers are represented by {\em arbitrary} decimal expansions.
 These are of course the real numbers: $\R$, and they solve a basic problem with the rationals, which is that the rational numbers have {\em holes}.
-That is, there are infinite sequences of rational numbers which are getting arbitraly close to {\em something}, but that something isn't a rational number!
+That is, there are infinite sequences of rational numbers which are getting arbitrarily close to {\em something}, but that something isn't a rational number!
 For example:
 $$
 	3, 3.1, 3.14, 3.141, 3.1415, \cdots
@@ -559,7 +541,7 @@ To motivate this, which will seem very strange at first given our rich experienc
 number 0.  This is arguably the {\em smallest} rational number by any sense of small since adding it to any other rational number
 does nothing.  But there is another {\em arithmetical} measure of smallness that zero satisfies: it is the only integer
 that is {\em arbitrarily divisible}, in the sense that $0$ is a multiple of $n$ for every integer $n$.  Thinking in terms of 
-decimals, $0$ is the only integer which, when represented in base 10, has arbitrarily many zeroes to the left of the decimal point.
+decimals, $0$ is the only integer which, when represented in base 10, has arbitrarily many zeros to the left of the decimal point.
 Said in terms of arithmetic, 0 is the only integer which is divisible by $10^k$ for every natural number $k$.
 This inspires a new prototype of distance:
 
@@ -575,7 +557,7 @@ distance function from it.  Indeed, the 10-adic absolute values of $2$ and $5$ a
 $10$-adic absolute value $0.1$, so this new absolute value isn't multiplicative.  That causes all kinds of problems,
 and it doesn't really deserve to be called an absolute value.  But this problem is caused by the fact that 10 can be factored as $2\cdot 5$,
 so it completely disappears if we replace 10 by a prime number $p$.  In this way, we get for every prime $p$,
-a $p$-dic absolute value on $\Z$, which can be extended to $\Q$ by declaring that the absolute value of
+a $p$-adic absolute value on $\Z$, which can be extended to $\Q$ by declaring that the absolute value of
 a ratio is the difference of the absolute values of numerator and denominator:
 \begin{align*}
 	|n|_p &:= 1/p^k\ \text{where}\ p^k\ \text{is the highest power of}\ p\ \text{dividing}\ n \\
@@ -637,7 +619,7 @@ $$
 but it is really hard (or even impossible with many systems) to find any (nontrivial\footnote{The obvious solutions 
 $(\pm1,0,\pm1)$, $(0,\pm 1, \pm 1)$, and $(0,0,0)$ are considered trivial because they are not particularly interesting!
 }) {\em rational} or {\em integer solutions}.
-Of course, the system above is a really famous one, whose integer solutions are exactly the {\em pythagorean triples},
+Of course, the system above is a really famous one, whose integer solutions are exactly the {\em Pythagorean triples},
 like $(3,4,5)$ and $(5,12,13)$.  It is important to emphasize that computers are not very helpful in finding such integer solutions:
 because there are infinitely many integers, we can't have a computer just plug in numbers and hope that it will eventually stumble upon an integer solution,
 since such a procedure might never finish, and even if there are integer solutions to be found, they are very rare compared to the real solutions,
@@ -645,7 +627,7 @@ so there isn't much chance to find them by happenstance.
 
 It turns out that for any system of algebraic equations like the one above, 
 finding solutions in $\Q_p$ for each prime $p$, or determining that none exist, 
-is about as easy as finding solutions in real numbers.  Roughly speaking, this is beacuse $\Q_p$---like the real numbers---is complete
+is about as easy as finding solutions in real numbers.  Roughly speaking, this is because $\Q_p$---like the real numbers---is complete
 with respect to an absolute value, so doesn't have any ``holes", and we can more or less plug in randomly and then solve for the missing values.
 This doesn't always work, just as it doesn't always work in the reals (for example, $x^2+y^2+z^2 = -1$ has no real solutions at all).
 But finding $p$-adic solutions to systems of equations, or determining that none exist, is a tractable problem,
@@ -653,8 +635,8 @@ just as it is in the reals (for example, one has a $p$-adic Newton's method for 
 
 This same problem for {\em integer} solutions is called {\em Hilbert's tenth problem}, and was formulated by the influential 
 German mathematician David Hilbert in his now eponymous list of problems, presented to the International Congress of Mathematicians in 1900.
-In 1970, building on prior work of many mathematicicians, Matiyasevich finally proved in 1970 that Hilbert's tenth problem is {\em unsolvable},
-meaning that there can be no algorithm to decide if a general system of slgebraic equations has an integer solution or not.
+In 1970, building on prior work of many mathematicians, Matiyasevich finally proved in 1970 that Hilbert's tenth problem is {\em unsolvable},
+meaning that there can be no algorithm to decide if a general system of algebraic equations has an integer solution or not.
 Amazingly, Matiyasevich's proof uses Fibonacci numbers in an essential way!
 
 Nonetheless, an amazing result of Hasse and Minkowski {\em does} provide an algorithm for equations of small degree:
