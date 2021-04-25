@@ -1,0 +1,57 @@
+\numberwithin{theorem}{section}  
+\numberwithin{equation}{section}
+
+\newenvironment{dotlist}
+   {
+      \begin{list}
+         {$\cdot$}
+         {
+            \setlength{\itemsep}{.5ex}
+            \setlength{\parsep}{0ex}
+            \setlength{\leftmargin}{1em}
+            \setlength{\parskip}{0ex}
+            \setlength{\topsep}{0ex}
+         }
+   }
+   {
+      \end{list}
+   }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% This comment creates colored and named commentary for use with collaborators
+
+
+%\usepackage[usenames,dvipsnames]{color}
+
+\newcommand{\bryden}[1]{{\color{red} \sf $\heartsuit\heartsuit\heartsuit$ Bryden: [#1]}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%This command creates a footnote and an indicator mark in the margin pointing to problems, questions, or unresolved (small) issues
+%To use type \edit{ insert text here }
+
+\newcommand{\marginalfootnote}[1]{%
+        \footnote{#1}
+        \marginpar[\hfill{\sf\thefootnote}]{{\sf\thefootnote}}}
+\newcommand{\edit}[1]{\marginalfootnote{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%This command creates a box marked ``To Do'' around text.
+%To use type \todo{  insert text here  }.
+
+\newcommand{\todo}[1]{\vspace{5 mm}\par \noindent
+\marginpar{\textsc{ToDo}}
+\framebox{\begin{minipage}[c]{0.95 \textwidth}
+\tt #1 \end{minipage}}\vspace{5 mm}\par}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[normalem]{ulem}
+\newcommand\hl{\bgroup\markoverwith
+    {\textcolor{yellow}{\rule[-.5ex]{.1pt}{2.5ex}}}\ULon}

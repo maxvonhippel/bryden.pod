@@ -1,0 +1,314 @@
+\usepackage[left=0.5in,right=3in,top=1in]{geometry}
+\setlength{\marginparwidth}{2.5in}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{eucal}
+\usepackage{yfonts}
+\usepackage[all]{xy}
+\usepackage{amsxtra}
+\usepackage{appendix} 
+\usepackage{tensor} 
+\usepackage{url}
+\usepackage{upgreek}
+\usepackage{etoolbox}
+\usepackage{marginnote}
+\usepackage{xcolor}
+\apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
+
+\usepackage[pdftex, 
+            breaklinks, 
+            linktocpage=true, 
+            bookmarksopen=true,
+            bookmarksopenlevel=0,
+            bookmarksnumbered=true]{hyperref}
+
+
+\RequirePackage{color}
+\definecolor{bwgreen}{rgb}{0.183,1,0.5}
+\definecolor{bwmagenta}{rgb}{0.7,0.0,0.1}
+\definecolor{bwblue}{rgb}{0.317,0.161,1}
+
+
+\hypersetup{
+%pdftitle = {},
+pdfauthor = {\textcopyright\ Bryden Cais},
+pdfcreator = {\LaTeX\ with package \flqq hyperref\frqq},
+colorlinks = {true},
+linkcolor={bwmagenta},	 %color red Color for normal internal links.
+anchorcolor={},	 %color	black Color for anchor text.
+citecolor={bwblue},	% color	green Color for bibliographical citations in text.
+filecolor={},	% color cyan Color for URLs which open local files.
+menucolor={},	% color	red	Color for Acrobat menu items.
+runcolor={},	% color	filecolor Color for run links (launch annotations).
+urlcolor={purple}, %	 color	magenta	Color for linked URLs.
+} 
+
+%\xymatrixcolsep{2.8pc}
+\CompileMatrices
+\entrymodifiers={+!!<0pt,\fontdimen22\textfont2>}
+%\def\objectstyle{\displaystyle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Introduce a nice script font for sheaves
+
+\DeclareFontFamily{OT1}{rsfs}{}
+\DeclareFontShape{OT1}{rsfs}{n}{it}{<-> rsfs10}{}
+\DeclareMathAlphabet{\mathscr}{OT1}{rsfs}{n}{it}
+
+\DeclareFontFamily{OT1}{pzc}{}
+\DeclareFontShape{OT1}{pzc}{n}{it}{<->s*[2.2]pzc}{}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{b}{sl}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% These commands allow one to make roman numerals
+\makeatletter
+\newcommand{\rmnum}[1]{\romannumeral #1}
+\newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Math Operators
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\depth}{depth}
+\DeclareMathOperator{\zar}{zar}
+\DeclareMathOperator{\Cat}{Cat}
+\DeclareMathOperator{\Cov}{Cov}
+%\DeclareMathOperator{\can}{can}
+\DeclareMathOperator{\tot}{tot}
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\spc}{sp}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\ord}{ord} 
+\DeclareMathOperator{\nil}{nil}
+\DeclareMathOperator{\Sym}{Sym} 
+\DeclareMathOperator{\Stab}{Stab} 
+%
+%\DeclareMathOperator{\pr}{pr}
+\newcommand*{\pr}{\rho}
+\newcommand*{\ps}{\sigma}
+%
+\DeclareMathOperator{\Div}{Div} 
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL} 
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\et}{\acute{e}t}
+\DeclareMathOperator{\rig}{rig}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\dR}{dR}
+\DeclareMathOperator{\Cris}{Cris}
+\DeclareMathOperator{\cris}{cris}
+\DeclareMathOperator{\MW}{MW}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\an}{an}
+\DeclareMathOperator{\Ner}{N\acute{e}r}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Alb}{Alb}
+\DeclareMathOperator{\sm}{sm}
+\DeclareMathOperator{\Extrig}{Extrig}
+\DeclareMathOperator{\Lie}{Lie}
+\DeclareMathOperator{\Inf}{Inf}
+%\DeclareMathOperator{\BT}{BT}
+\DeclareMathOperator{\reg}{reg}
+\DeclareMathOperator{\Ab}{Ab}
+\DeclareMathOperator{\tors}{tors}
+\DeclareMathOperator{\free}{fr}
+\DeclareMathOperator{\red}{red}
+\DeclareMathOperator{\smooth}{sm}
+\DeclareMathOperator{\Char}{char}
+\DeclareMathOperator{\nr}{nr}
+\DeclareMathOperator{\Mod}{Mod}
+\DeclareMathOperator{\Fil}{Fil}
+\DeclareMathOperator{\MF}{MF}
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\st}{st}
+\DeclareMathOperator{\Rep}{Rep}
+\DeclareMathOperator{\tor}{tor}
+\DeclareMathOperator{\sep}{sep}
+\DeclareMathOperator{\perf}{rad}
+\DeclareMathOperator{\un}{un}
+\DeclareMathOperator{\projdim}{projdim}
+\DeclareMathOperator{\res}{res}
+\DeclareMathOperator{\Def}{Def}
+\DeclareMathOperator{\Ht}{ht}
+\DeclareMathOperator{\GD}{GD}
+\DeclareMathOperator{\Ig}{Ig}
+\DeclareMathOperator{\len}{length}
+\DeclareMathOperator{\cone}{cone}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\rad}{rad}
+\DeclareMathOperator{\Con}{Conn}
+\DeclareMathOperator{\Irr}{Irr}
+\DeclareMathOperator{\bal}{bal.}
+\DeclareMathOperator{\Ell}{Ell}
+\DeclareMathOperator{\Sets}{Sets}
+\DeclareMathOperator{\univ}{univ}
+\DeclareMathOperator{\MC}{M}
+\DeclareMathOperator{\Rad}{Rad}
+\DeclareMathOperator{\abs}{abs}
+\DeclareMathOperator{\Cot}{Cot}
+\DeclareMathOperator{\pdiv}{pdiv}
+\DeclareMathOperator{\ModFI}{ModFI}
+\DeclareMathOperator{\inv}{IF}
+\DeclareMathOperator{\mult}{m}
+\DeclareMathOperator{\loc}{ll}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Frob}{F}
+\DeclareMathOperator{\Ver}{V}
+\DeclareMathOperator{\proj}{proj}
+\DeclareMathOperator{\incl}{incl}
+\DeclareMathOperator{\Hodge}{Hdg}
+\DeclareMathOperator{\ssimp}{ss}
+\DeclareMathOperator{\Null}{null}
+\DeclareMathOperator{\sh}{sh}
+\DeclareMathOperator{\PD}{PD}
+\DeclareMathOperator{\Sen}{Sen}
+\DeclareMathOperator{\cusps}{cusps}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%New Commands		
+
+%%% The usual rings %%%
+\newcommand*{\R}{\ensuremath{\mathbf{R}}}   
+\renewcommand*{\c}{\ensuremath{\mathbf{C}}}              
+\newcommand*{\Z}{\ensuremath{\mathbf{Z}}}               
+\newcommand*{\Q}{\ensuremath{\mathbf{Q}}}                           
+\newcommand*{\N}{\ensuremath{\mathbf{N}}}             
+\newcommand*{\Qbar}{\overline{\Q}}                             
+\renewcommand*{\k}{k}             
+\newcommand*{\kbar}{\overline{k}}       
+\newcommand*{\Kbar}{\overline{K}}    
+          
+%%% The usual schemes %%%
+\renewcommand*{\P}{\ensuremath{\mathbf{P}}}           		
+\newcommand*{\Gm}{\ensuremath{{\mathbf{G}_m}}}   
+\newcommand*{\Ga}{\ensuremath{{\mathbf{G}_a}}}   
+
+%%% Gothic letters (ideals) %%%
+\newcommand*{\m}{\mathfrak{M}}                          
+\newcommand*{\n}{\mathfrak{N}}                            
+\newcommand*{\p}{\mathfrak{p}}                            
+\newcommand*{\q}{\mathfrak{q}}                            
+\renewcommand*{\r}{\mathfrak{r}}       
+\newcommand*{\s}{\mathfrak{S}}
+
+%%% Capital scripts (sheaves etc)
+\newcommand*{\A}{\ensuremath{\mathcal{A}}}
+\newcommand*{\scrA}{\mathscr{A}}
+\newcommand*{\B}{\mathcal{B}}
+\newcommand*{\scrC}{\mathscr{C}}
+\newcommand*{\C}{\mathbf{C}}
+\newcommand*{\E}{\mathscr{E}}     
+\newcommand*{\F}{\mathbf{F}}
+\newcommand*{\scrF}{\mathscr{F}}
+\newcommand*{\calF}{\mathcal{F}}
+\newcommand*{\scrS}{\mathscr{S}}
+\newcommand*{\scrW}{\mathscr{W}}
+\newcommand*{\G}{\mathcal{G}}
+\newcommand*{\scrG}{\mathscr{G}}  
+\newcommand*{\scrH}{\mathscr{H}}                           
+\newcommand*{\h}{\mathscr{H}}                               
+\newcommand*{\I}{\mathscr{I}}                               
+\newcommand*{\J}{\mathcal{J}}
+\renewcommand*{\L}{\mathscr{L}}
+\newcommand*{\scrM}{\mathscr{M}}
+\newcommand*{\scrT}{\mathscr{T}}
+\newcommand*{\calM}{\mathcal{M}}
+\renewcommand*{\O}{\mathscr{O}}                    
+\newcommand*{\U}{\mathscr{U}} 
+\newcommand*{\X}{\mathcal{X}}     
+\newcommand*{\Y}{\mathcal{Y}}
+
+%%% script capitals %%%
+\newcommand*{\scrJ}{\mathscr{J}}                               
+\newcommand*{\calL}{\mathcal{L}}                              
+\newcommand*{\calS}{\mathcal{S}}                             
+\newcommand*{\scrP}{\mathscr{P}}  
+\newcommand*{\scrQ}{\mathscr{Q}}                             
+
+%%% Various sheaves %%%
+\newcommand*{\scrHom}{\mathscr{H}\mathit{om}}      
+\newcommand*{\scrExtrig}{\mathscr{E}\mathit{xtrig}}	
+\newcommand*{\scrExt}{\mathscr{E}\mathit{xt}}               
+\newcommand*{\scrLie}{\mathscr{L}\mathit{ie}}      
+\newcommand*{\scrD}{\mathscr{D}}          
+
+%%% Misc %%%
+\newcommand*{\EE}{\mathbb E}        
+\newcommand*{\barrho}{\overline{\rho}}                        
+\newcommand*{\invlim}{\varprojlim}                               
+\newcommand*{\tensorhat}{\widehat{\otimes}}             
+\newcommand*{\D}{\ensuremath{\mathbf{D}}}
+\newcommand*{\M}{\ensuremath{\mathbf{M}}}
+\newcommand*{\calD}{\ensuremath{\mathcal{D}}}              
+\renewcommand*{\H}{\ensuremath{\mathbf{H}}}
+\newcommand*{\z}{\zeta} 
+\newcommand*{\dual}{\vee}
+\renewcommand*{\qedsymbol}{\ensuremath{\blacksquare}}            % end of proof
+\newcommand*{\eqdef}{\stackrel{\text{def}}{=}}     % definition
+\newcommand*{\wa}[1]{{}^{\mathrm{w.a.}}\hspace{-0.4ex}{#1}}
+\newcommand*{\mfun}{\underline{\M}}
+\newcommand*{\Mfun}{\underline{\m}}
+\newcommand*{\Dfun}{\underline{D}}
+\newcommand*{\Gfun}{\underline{G}}
+\newcommand*{\Dual}[1]{{{#1}^t}}
+\newcommand*{\VDual}[1]{{{#1}^{\vee}}}
+%\newcommand*{\R}{\ensuremath{\mathscr{R}}}              
+\renewcommand*{\b}{\ensuremath{\mathrm{b}}}
+\renewcommand*{\int}{\ensuremath{\mathrm{int}}}
+\newcommand*{\bnd}{\ensuremath{\mathrm{bnd}}}
+\newcommand*{\e}{\ensuremath{\mathbf{E}}}
+\renewcommand*{\a}{\ensuremath{\mathbf{A}}}
+\newcommand*{\Dst}{\ensuremath{{\underline{D}_{\st}}}}
+\renewcommand*{\div}{\ensuremath{\mathrm{div}}}
+\renewcommand*{\SS}{\ensuremath{{\mathrm{ss}}}}
+\renewcommand*{\u}[1]{\underline{#1}}
+\renewcommand*{\o}[1]{\overline{#1}}
+\newcommand*{\wh}[1]{\widehat{#1}}
+\newcommand*{\wt}[1]{\widetilde{#1}}
+\newcommand*{\nor}[1]{{#1}^{\mathrm{n}}}
+\newcommand*{\T}{\ensuremath{\mathbf{T}}}
+\newcommand*{\tens}{\mathop{\otimes}\limits}
+\newcommand*{\can}{\text{-}\mathrm{can}}
+\newcommand*{\fiber}{\mathop{\times}\limits}
+\newcommand*{\subscript}[1]{\ensuremath{_{#1}}}
+
+\DeclareMathOperator{\Win}{Win}
+\DeclareMathOperator{\BT}{BT}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define environments
+
+\theoremstyle{plain}
+  \newtheorem{theorem}{Theorem}
+  \newtheorem{proposition}[theorem]{Proposition}
+  \newtheorem{lemma}[theorem]{Lemma}
+  \newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+  \newtheorem{definition}[theorem]{Definition}
+  \newtheorem{notation}[theorem]{Notation}
+  \newtheorem{hypotheses}[theorem]{Hypotheses}
+  \newtheorem{question}[theorem]{Question}
+  \newtheorem{philosophy}[theorem]{Philosophy}	
+
+\theoremstyle{remark}
+  \newtheorem{example}[theorem]{Example}
+  \newtheorem{remark}[theorem]{Remark}
+  \newtheorem{remarks}[theorem]{Remarks}
+  \newtheorem{exercise}[theorem]{Exercise}
+  \newtheorem{warning}[theorem]{Warning}
+  \newtheorem{convention}[theorem]{Convention}	
