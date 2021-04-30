@@ -25,6 +25,11 @@ which arose to abstractly represent and manipulate tallies.
 Over the course of thousands of years, this system of counting numbers was 
 studied, expanded, and generalized to include zero, 
 \marginnote{\footnotesize
+  The Greeks mostly ignored 0 because they used
+  geometric lengths (e.g. of string) rather than symbolic numbers.
+  The Pythagoreans thought of numbers as multitudes of 1s,
+    and apparently did not consider 1 itself to be a number, 
+    let alone zero~\cite{neg.numbers}.
   There are two kinds of 0:
     the number representing \emph{nothing},
     as in $1 - 1 = \text{\hl{0}}$, and
@@ -33,8 +38,6 @@ studied, expanded, and generalized to include zero,
   The earliest known placeholder zero
     is on a Babylonian tablet from $\approx400$BC,
   that uses a base-60 number system with $''$ for a placeholder.
-  The Greeks mostly ignored 0 because they used
-  geometric lengths (e.g. of string) rather than symbolic numbers.
   Ptolemy used a placeholder 0 in 130AD, but only as punctuation.
   The Mayans discovered the placeholder 0 by 665AD,
   while the Indians began using it by 876AD.
@@ -84,11 +87,6 @@ if and only if it is not a member of itself.
 In the reasoning systems ZF (Zermelo Fraenkel) and ZFC (with Choice) 
 the paradox disappears, because the word ``set'' is redefined to exclude 
 such pathological examples.~\cite{russel.paradox}
-Although ZF and ZFC are probably the most popular modern foundations for
-mathematics, a growing number of researchers prefer type-theoretic foundations
-such as Homotopy Type Theory (HoTT), which seem more ``natural'' for 
-reasoning with a theorem-prover like \textsc{Coq} about concepts like 
-compiler correctness.
 } 
   (modern mathematics is predicated on axiomatic set theory, 
   typically using the ZF or ZFC axioms).
@@ -115,8 +113,9 @@ This second argument will return as a central, key theme:
 Such is the genesis of the integers
 \marginnote{\footnotesize Alternatively denoted $\mathbb{Z}$.}
 \[\Z:=\{\ldots -3,-2,-1,0,1,2,3,\ldots\},\]
-% -- MAX MADE IT THIS FAR
-consisting of the naturals (with zero!) and their negatives.  
+consisting of the naturals (with zero!) and their negatives.
+\marginnote{\footnotesize The first recorded use of negative numbers was in \emph{The Nine Chapters on the Mathematical Art}, a textbook written by multiple generations of Chinese mathematicians between 100BC and 50AD, in which negatives were denoted with black dots, and positives with red dots.  In the 3$^{\text{rd}}$ century AD, Diophantus' book \emph{Arithmetica} described certain equations as ``absurd'' because they yielded negative solutions.  In the 7$^{\text{th}}$ century AD, the Indian mathematician Brahmagupta extended Diophantus' work to treat negative numbers as numbers in their own right.  The Europeans did not catch up to Brahmagupta in their philosophical respect for negative numbers for another $\approx$700 years.  The French mathematician Chuquet introduced negative exponents in the 15$^{\text{th}}$ century AD, calling them ``absurd'' exponents.  Descartes, Pascal, and Leibniz all thought negative numbers absurd, even if propositionally valid.  Maclaurin and Euler justified negative numbers using the metaphor of debt.  However, controversy around the apparent absurdity of negative and imaginary numbers persisted in European literature through the 18$^{\text{th}}$ century.~\cite{neg.numbers}}
+
 It took civilization some time to accept negative quantities as ``numbers" in 
 their own right, but the above philosophy plays a critical role here.  
 Addition is fundamental operations of the number system $\N$,
@@ -134,7 +133,10 @@ as the real world has informed and spurned so much important mathematics, but th
 Now the integers are a lot better than the naturals, because they form a {\em ring}.  A ring is a set of numbers in which one can do arithmetic
 (addition and multiplication) {\em and} there are both additive and multiplicative identities, {\em and} every element has an additive inverse,
 meaning that we can always solve the equation $x+r = 0$ for any number $r$.  One also asks that the usual axioms (associativity, distributivity of
-multiplication over addition etc.) hold.  For the purposes of this discussion, we'll only talk about {\em commutative} rings, {\em i.e.} rings in which
+multiplication over addition etc.) hold.  
+\marginnote{\footnotesize  The Irish mathematician  William Rowan Hamilton discovered the Quaternions on October 16$^{\text{th}}$, 1843, considered the first important identified example of a non-commutative ring.  Hamilton's goal was to extend the $\mathbb{C}$omplex numbers  to a structure with one real part and two imaginary parts, which he called a Theory of Triplets, to be used for representing rotations in 3D.  However, no such Theory of Triplets exists.  Instead, while walking across a bridge on a shopping trip with his wife, he found and exclaimed a theory of 4, i.e., of Quaternions: \(i^2=j^2=k^2=ij=jk=ki=-1\). He recorded the observation in an etching on the side of the Broome Bridge near the Royal Canal in Dublin, which unfortunately has worn away~\cite{ring.history,buchmann2011brief}.  Today Quaternions are essential for computing minimal rotations without gimbal lock.}
+For the purposes of this discussion, we'll only talk about {\em commutative} rings, 
+{\em i.e.} rings in which
 $$x\cdot y = y\cdot x$$
 for all $x$ and $y$.  There are lots of important examples of non-commutative rings, like rings of square matrices, but that is a topic for another time.
 
@@ -151,14 +153,19 @@ and either we aren't allowed to subtract $x$ from both sides (ruining basic arit
 and that is not very useful!  So by {\em definition}, the rationals are all solutions $x$ to equations $mx=n$ with $m\neq 0$.  We
 represent such a solution as the fraction $n/m$, but then we have some weird rules to maintain the usual rules of arithmetic,
 since if $mx=n$ then $2mx = 2n$, so $2n/2m = n/m$.  
-$$
-	\Q:=\left\{\frac{n}{m}\ :\ n,m\in \Z, m\neq 0\right\}/
-$$
-It took a long time to really understand fractions, because strictly speaking a {\em fraction} like $1/2$ is an equivalence class of pairs of integers
-$$
-	\frac{1}{2} = \{ (n,m)\ :\ n,m\in \Z, m=2n \} = \{ (1,2), (2,4), (3,6), (-1,-2), (-5,-10),\ldots\}
-$$
-This is just saying that the fractions ${1/2}, 2/4, 3/6, -1/-2,\ldots$ are all the {\em same} number, because they solve mathematically equivalent
+\[
+	\Q:=\left\{\frac{n}{m}\ :\ n,m\in \Z, m\neq 0\right\}
+\]
+It took a long time to really understand fractions, because strictly speaking a {\em fraction} like $1/2$ is an 
+\marginnote{\footnotesize Although hinted at since the dawn of mathematics, equivalence classes were first formally introduced in Jourdain's 1912 paper \emph{On isoid relations and theories of irrational number}.  Jourdain explained how the word ``equivalence'' had been previously used by Cantor to describe the cardinal numbers, and he suggested that the same word could be used to describe numbers that were inherently related in other ways.  In 1926, Hasse explained how a partition of a set yields ``classes'', thus alluding to the idea of equivalence classes, although he did not call them such.  Van der Waerden’s \emph{Moderne Algebra} explicitly discussed the \emph{{\"A}quivalenzrelation} (equivalence relation), but the term did not survive translation to English. In 1935, Birkhoff illuminated the relationship between equivalence classes and relations, but he called the classes ``categories''.  In 1942, Oystein Ore called them ``blocks''.  The term ``equivalence class'' became more commonplace in the late 30s, but was not defined generally, only in the context of a given relation (i.e. for the relation $R$, one might discuss the $R$-class, denoted $[R]$ in the style of Lefschetz).  Finally, equivalence relations were defined foundationally in Tukey’s \emph{Convergence and Uniformity in Topology} (1940)~\cite{asghari2019equivalence}.  Today equivalence has found new footing as a foundational concept in Homotopy Type Theory, where one of the axioms (the Univalence Axiom) says ``equivalence is equivalent to equality''~\cite{awodey2013voevodsky}.}
+equivalence class of pairs of integers
+\[\begin{aligned}
+	\frac{1}{2} 
+    & = \{ (n,m)\ :\ n,m\in \Z, m=2n \} \\
+    & = \{ (1,2), (2,4), (3,6), (-1,-2), (-5,-10),\ldots\}
+\end{aligned}
+\]
+This is just saying that the fractions $\frac{1}{2}, \frac{2}{4}, \frac{3}{6}, \frac{-1}{-2},\ldots$ are all the {\em same} number, because they solve mathematically equivalent
 equations.  But they don't teach equivalence classes in school when we learn about fractions, and I think this is a difficult and subtle concept.
 
 The set of rational numbers forms what is called a {\em field}: it is a ring in which every nonzero number has a multiplicative inverse.
