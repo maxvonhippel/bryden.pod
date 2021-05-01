@@ -134,7 +134,9 @@ Now the integers are a lot better than the naturals, because they form a {\em ri
 (addition and multiplication) {\em and} there are both additive and multiplicative identities, {\em and} every element has an additive inverse,
 meaning that we can always solve the equation $x+r = 0$ for any number $r$.  One also asks that the usual axioms (associativity, distributivity of
 multiplication over addition etc.) hold.  
-\marginnote{\footnotesize  The Irish mathematician  William Rowan Hamilton discovered the Quaternions on October 16$^{\text{th}}$, 1843, considered the first important identified example of a non-commutative ring.  Hamilton's goal was to extend the $\mathbb{C}$omplex numbers  to a structure with one real part and two imaginary parts, which he called a Theory of Triplets, to be used for representing rotations in 3D.  However, no such Theory of Triplets exists.  Instead, while walking across a bridge on a shopping trip with his wife, he found and exclaimed a theory of 4, i.e., of Quaternions: \(i^2=j^2=k^2=ij=jk=ki=-1\). He recorded the observation in an etching on the side of the Broome Bridge near the Royal Canal in Dublin, which unfortunately has worn away~\cite{ring.history,buchmann2011brief}.  Today Quaternions are essential for computing minimal rotations without gimbal lock.}
+\marginnote{\footnotesize  The Irish mathematician  William Rowan Hamilton discovered the Quaternions on October 16$^{\text{th}}$, 1843, considered the first important important non-commutative ring.  Hamilton's goal was to extend the Complex numbers  to a structure with one real part and two imaginary parts, which he called a Theory of Triplets, to be used for representing rotations in 3D.  However, no such Theory of Triplets exists~\cite{hankins1977triplets}.  
+Instead, while walking across a bridge on a shopping trip with his wife, he found and etched into the Broome Bridge a Theory of Quartets: Quaternions~\cite{ring.history,buchmann2011brief}.
+This illustrates how one cannot just invent a number to satisfy some interesting requirement, because sometimes (as in the Algebra of Triplets) the requirement is unsatisfiable  Today Quaternions are used for computing rotations in video games, missile guidance systems, self-driving cars, etc.}
 For the purposes of this discussion, we'll only talk about {\em commutative} rings, 
 {\em i.e.} rings in which
 $$x\cdot y = y\cdot x$$
@@ -157,7 +159,7 @@ since if $mx=n$ then $2mx = 2n$, so $2n/2m = n/m$.
 	\Q:=\left\{\frac{n}{m}\ :\ n,m\in \Z, m\neq 0\right\}
 \]
 It took a long time to really understand fractions, because strictly speaking a {\em fraction} like $1/2$ is an 
-\marginnote{\footnotesize Although hinted at since the dawn of mathematics, equivalence classes were first formally introduced in Jourdain's 1912 paper \emph{On isoid relations and theories of irrational number}.  Jourdain explained how the word ``equivalence'' had been previously used by Cantor to describe the cardinal numbers, and he suggested that the same word could be used to describe numbers that were inherently related in other ways.  In 1926, Hasse explained how a partition of a set yields ``classes'', thus alluding to the idea of equivalence classes, although he did not call them such.  Van der Waerden’s \emph{Moderne Algebra} explicitly discussed the \emph{{\"A}quivalenzrelation} (equivalence relation), but the term did not survive translation to English. In 1935, Birkhoff illuminated the relationship between equivalence classes and relations, but he called the classes ``categories''.  In 1942, Oystein Ore called them ``blocks''.  The term ``equivalence class'' became more commonplace in the late 30s, but was not defined generally, only in the context of a given relation (i.e. for the relation $R$, one might discuss the $R$-class, denoted $[R]$ in the style of Lefschetz).  Finally, equivalence relations were defined foundationally in Tukey’s \emph{Convergence and Uniformity in Topology} (1940)~\cite{asghari2019equivalence}.  Today equivalence has found new footing as a foundational concept in Homotopy Type Theory, where one of the axioms (the Univalence Axiom) says ``equivalence is equivalent to equality''~\cite{awodey2013voevodsky}.}
+\marginnote{\footnotesize Although hinted at since the dawn of mathematics, equivalence classes were first formally introduced in Jourdain's 1912 paper \emph{On isoid relations and theories of irrational number}.  Jourdain explained how the word ``equivalence'' had been previously used by Cantor to describe the cardinal numbers, and he suggested that the same word could be used to describe numbers that were inherently related in other ways.  In 1926, Hasse explained how a partition of a set yields ``classes'', thus alluding to the idea of equivalence classes, although he did not call them such.  Van der Waerden’s \emph{Moderne Algebra} explicitly discussed the \emph{{\"A}quivalenzrelation} (equivalence relation), but the term did not survive translation to English. In 1935, Birkhoff illuminated the relationship between equivalence classes and relations, but he called the classes ``categories''.  In 1942, Oystein Ore called them ``blocks''.  The term ``equivalence class'' became more commonplace in the late 30s, but was not defined generally, only in the context of a given relation (i.e. for the relation $R$, one might discuss the $R$-class, denoted $[R]$ in the style of Lefschetz).  Finally, equivalence relations were defined foundationally in Tukey’s \emph{Convergence and Uniformity in Topology} (1940)~\cite{asghari2019equivalence}.  Today equivalence has found new footing as a foundational concept in Homotopy Type Theory, where one of the axioms (the Univalence Axiom) says ``equivalence is equivalent to equality''~\cite{awodey2013voevodsky}.  In that case, the relevant kind of equivalence is homotopical.}
 equivalence class of pairs of integers
 \[\begin{aligned}
 	\frac{1}{2} 
@@ -181,9 +183,9 @@ and there is a rather nice characterization of which decimal expansions are rati
 
 One confounding feature of decimals is that, just like a rational number can have many representations as a fraction ($1/2 = 2/4 = 3/6$),
 so too a number can have more than representation as a decimal expansion!  A classic example is:
-$$
+\[
   1.\overline{0} = 0.\overline{9}.
-$$ 
+\]
 This example is really frustrating for many people, and has resulted in more than one shouting match and even tears. 
 For whatever reason, many people {\em believe} that every number has a unique decimal expansion, possibly because
 we are taught from an early age to equate the concepts of {\em number} and {\em decimal expansion}.  But it just isn't true,
@@ -191,10 +193,26 @@ much in the same way that rational numbers don't have a unique representation as
 {\em insisted} that $1$ and $0.\overline{9}$ are {\em different} numbers, and no amount of reasoning would convince her otherwise.  But if you
 admit that decimal expansions represent numbers, and therefore must obey the basic laws of arithmetic (these are axiomatized!), then
 $1=0.\overline{9}$ is forced upon you, since:
-$$
+\[
 \frac{1}{3} = 0.\overline{3}
-$$
-by long division, so multiplying both sides by 3 yields $1=0.\overline{9}$.  Said another way, whatever number $x=0.\overline{9}$
+\]
+by long division, so multiplying both sides by 3 yields $1=0.\overline{9}$.  
+\marginnote{\footnotesize This argument is intuitively convincing, but formal arguments are more complicated.  The classic argument taught to mathematics students uses the $(\epsilon, \delta)$-definition of a \emph{limit}, and can be unsatisfying because, at the introductory stage of a real-analysis course, it is not yet obvious to the students that such limits actually define equality.  Another approach is a proof based on infinite series.  We know that for all $r$, if $\abs{r}<1$, then: 
+
+\(\begin{aligned}
+\sum_{i = 1}^{\infty} ar^i = \frac{ar}{1 - r}
+\end{aligned}\)
+
+Plugging in $1/10$ for $r$, and $9$ for $a$, we get the following:
+
+\(\begin{aligned}0.\overline{9} & = \sum_{i = 1}^{\infty} 9(\frac{1}{10})^i \\
+& = \frac{9(\frac{1}{10})}{1 - \frac{1}{10}} \\
+& = \frac{9/10}{9/10} \\
+& = 1 \end{aligned}\)
+
+This proof appears in Euler's 1770 \emph{Elements of Algebra}~\cite{euler.elements}.
+}
+Said another way, whatever number $x=0.\overline{9}$
 is, it has to obey the rules of arithmetic, so has to satisfy $10x - x = 9$ since multiplication by 10 shifts the decimal to the right by 1, 
 and subtracting $x$ from this lops off the infinite repeating tail of $9's$.  But then $9x=9$, which again forces $x=1$.
 
@@ -204,21 +222,24 @@ With Proposition \ref{rat} in mind, it is natural to ask what numbers are repres
 These are of course the real numbers: $\R$, and they solve a basic problem with the rationals, which is that the rational numbers have {\em holes}.
 That is, there are infinite sequences of rational numbers which are getting arbitrarily close to {\em something}, but that something isn't a rational number!
 For example:
-$$
+\[
 	3, 3.1, 3.14, 3.141, 3.1415, \cdots
-$$
+\]
 This just reflects the fact that if you truncate an arbitrary decimal expansion at any point, you will get a terminating decimal expansion, 
 which must therefore be a rational number.  
 From this point of view, the rational numbers are {\em not complete} with respect to the usual measure of distance given by absolute value:
-$$
+\[
 	d(x,y) := |x - y|.
-$$
+\]
+\marginnote{\footnotesize This distance function is a \emph{metric}.  The French mathematician Maurice Fr{\'e}chet initiated the study of metrics and metric spaces (spaces topologized by metrics) in 1905~\cite{frechet}.  Today metric spaces are fundamental to operations research, machine learning, algorithm design, and numerous other disciplines.
+}
 The reason is that there are lots of sequences of rationals as above, with the property that the distance between any two terms
 in the sequence gets smaller and smaller as you go out, but there is no ``final term", or limit, of the sequence within the system of 
 rational numbers.  In this way, the real numbers are the {\em completion} of the rationals with respect to the usual distance function above:
 they ``fill in'' all of the holes that the usual distance function perceives in the form of sequences whose terms get increasingly close together.
 Such sequences are called {\em Cauchy sequences}, after the French mathematician Augustin-Louis Cauchy (1789--1857), who
-was a pioneer of mathematical rigor in algebra and analysis, and introduced the much-loathed (by students) notion of $\epsilon--\delta$
+was a pioneer of mathematical rigor in algebra and analysis,\marginnote{\footnotesize Unfortunately, the $(\epsilon,\delta)$ definition of the limit is not part of the standard US high school calculus eduction.  I say ``unfortunately'' because the definition of the derivative \emph{is}, but it doesn't actually make much sense without also knowing the definition of the limit.  The powers that be finally share their secrets when you make it to advanced vector calculus or introductory real analysis~\cite{fitzpatrick2009advanced}.}
+ and introduced the much-loathed (by students) notion of $(\epsilon,\delta)$
 arguments to Calculus.
 
 The system of real numbers has many wonderful properties, including {\em continuity}, and therefore provides the right setting
@@ -230,18 +251,19 @@ nowhere, nonzero smooth functions which vanish identically on any closed subset,
 \section{$p$-Adic numbers}
 
 As explained above, the real numbers are created by ``filling in the holes" of the rational numbers that are detected by the
-usual distance function $d(x,y)=|x-y|$.  But this is {\em not} the only distance function on the rational numbers, and
+usual distance function $d(x,y)=|x-y|$.  
+But this is {\em not} the only distance function on the rational numbers, and
 different distance functions will pick up on different ``holes", which are filled in by entirely new systems of numbers!
 To motivate this, which will seem very strange at first given our rich experience of the real numbers, consider the rational
 number 0.  This is arguably the {\em smallest} rational number by any sense of small since adding it to any other rational number
 does nothing.  But there is another {\em arithmetical} measure of smallness that zero satisfies: it is the only integer
 that is {\em arbitrarily divisible}, in the sense that $0$ is a multiple of $n$ for every integer $n$.  Thinking in terms of 
-decimals, $0$ is the only integer which, when represented in base 10, has arbitrarily many zeros to the left of the decimal point.
+decimals, $0$ is the only integer which, when represented in base 10, has arbitrarily many zeros to the left of the decimal point.\marginnote{\footnotesize \(0 = \bar{0}.\bar{0}\)}
 Said in terms of arithmetic, 0 is the only integer which is divisible by $10^k$ for every natural number $k$.
 This inspires a new prototype of distance:
 
 \begin{definition}
-	The 10-adic absolute value of an integer $n$ is the $1/10^k$, where $10^k$ is the highest power of
+	The 10-adic absolute value of an integer $n$ is $1/10^k$, where $10^k$ is the highest power of
 	10 dividing $n$.
 \end{definition}  
 
