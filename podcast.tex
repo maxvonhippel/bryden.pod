@@ -134,9 +134,9 @@ Now the integers are a lot better than the naturals, because they form a {\em ri
 (addition and multiplication) {\em and} there are both additive and multiplicative identities, {\em and} every element has an additive inverse,
 meaning that we can always solve the equation $x+r = 0$ for any number $r$.  One also asks that the usual axioms (associativity, distributivity of
 multiplication over addition etc.) hold.  
-\marginnote{\footnotesize  The Irish mathematician  William Rowan Hamilton discovered the Quaternions on October 16$^{\text{th}}$, 1843, considered the first important important non-commutative ring.  Hamilton's goal was to extend the Complex numbers  to a structure with one real part and two imaginary parts, which he called a Theory of Triplets, to be used for representing rotations in 3D.  However, no such Theory of Triplets exists~\cite{hankins1977triplets}.  
-Instead, while walking across a bridge on a shopping trip with his wife, he found and etched into the Broome Bridge a Theory of Quartets: Quaternions~\cite{ring.history,buchmann2011brief}.
-This illustrates how one cannot just invent a number to satisfy some interesting requirement, because sometimes (as in the Algebra of Triplets) the requirement is unsatisfiable  Today Quaternions are used for computing rotations in video games, missile guidance systems, self-driving cars, etc.}
+\marginnote{\footnotesize  The Irish mathematician  William Rowan Hamilton discovered the Quaternions on October 16$^{\text{th}}$, 1843.  The Quaternions were the first important non-commutative ring discovered.  Hamilton's goal was to extend the Complex numbers to a structure with one real part and two imaginary parts, a Theory of Triplets, to be used for representing rotations in 3D.  However, no such Theory exists~\cite{hankins1977triplets}.  
+Instead, he one day found and immediately etched into the Broome Bridge a Theory of Quartets: Quaternions~\cite{ring.history,buchmann2011brief}.
+This illustrates how one cannot just invent a number to satisfy some interesting requirement, because sometimes (as in the Algebra of Triplets) the requirement is unsatisfiable.}
 For the purposes of this discussion, we'll only talk about {\em commutative} rings, 
 {\em i.e.} rings in which
 $$x\cdot y = y\cdot x$$
@@ -250,6 +250,27 @@ nowhere, nonzero smooth functions which vanish identically on any closed subset,
 
 \section{$p$-Adic numbers}
 
+\marginnote{
+  \footnotesize $p$-Adic numbers were first explicitly discovered by the German
+  mathematician Kurt Wilhelm Sebastian Hensel in 1897~\cite{hensel1897neue}.
+  However, the translator's introduction to Dedekind and Weber's 
+  \emph{Theory of algebraic functions of one variable}
+  notes: ``Indeed, with hindsight it becomes apparent that a discrete valuation 
+  is behind Kummer's concept of ideal numbers.''~\cite{dedekind2012theory}
+  The implication is that Kummer - in this case, the German mathematician Ernst Eduard Kummer --
+  may have implicitly used $p$-adic numbers before Hensel did.
+  This does not exactly mean that Kummer came up with the $p$-adic numbers first;
+      he might not have known his work had such deeper significance.
+  The mathematician Christopher Zeeman once debated the historian David Fowler
+  for 40 years about weather or not Euclid viewed ratios as something like an equivalence
+  class~\cite{asghari2019equivalence}.  
+  The question is similar to asking of Kummer really \emph{knew} that he was doing $p$-adic
+  number theory.  Zeeman wrote, in correspondence to Fowler, ``The historian thinks extrinsically 
+  in terms of the written evidence and adheres strictly to that data, whereas the mathematician 
+  thinks intrinsically in terms of the mathematics itself, which he freely rewrites in his own notation 
+  in order to better understand it and to speculate on what might have been passing through the mind of the ancient mathematician, without bothering to check the rest of the data.''~\cite{zeeman2008s}
+}
+
 As explained above, the real numbers are created by ``filling in the holes" of the rational numbers that are detected by the
 usual distance function $d(x,y)=|x-y|$.  
 But this is {\em not} the only distance function on the rational numbers, and
@@ -258,7 +279,7 @@ To motivate this, which will seem very strange at first given our rich experienc
 number 0.  This is arguably the {\em smallest} rational number by any sense of small since adding it to any other rational number
 does nothing.  But there is another {\em arithmetical} measure of smallness that zero satisfies: it is the only integer
 that is {\em arbitrarily divisible}, in the sense that $0$ is a multiple of $n$ for every integer $n$.  Thinking in terms of 
-decimals, $0$ is the only integer which, when represented in base 10, has arbitrarily many zeros to the left of the decimal point.\marginnote{\footnotesize \(0 = \bar{0}.\bar{0}\)}
+decimals, $0$ is the only integer which, when represented in base 10, has arbitrarily many zeros to the left of the decimal point.
 Said in terms of arithmetic, 0 is the only integer which is divisible by $10^k$ for every natural number $k$.
 This inspires a new prototype of distance:
 
