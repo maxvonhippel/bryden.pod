@@ -5,7 +5,6 @@
 
 \begin{document}
 \title{Science History Podcast: \emph{Numbers and Number Systems}}
-
 \subjclass[2010]{}
 \keywords{}
 \date{\today}
@@ -13,14 +12,13 @@
 \maketitle
 
 \section{Introduction}
+\marginnote{\footnotesize This document serves as informal reference material for the Science History Podcast Episode 43 on Number Theory; and was drafted by Bryden Cais, Max von Hippel, and Frank von Hippel.}
 
-In this podcast episode, we will discuss the history and development of Number 
+\noindent In this podcast episode, we will discuss the history and development of Number 
 Theory, viewed through the lens of numbers and number systems.
 We will begin with the \emph{natural numbers}, originally
-\marginnote{\footnotesize Alternatively denoted $\mathbb{N}$.  Note that 
-whenever we write something like $A := B$, we mean that the definition of $A$ is
-$B$.  Sometimes this is written $A \triangleq B$.}
 \[\N:=\{1,2,3,\ldots\}\]
+\marginnote{\footnotesize Alternatively denoted $\mathbb{N}$.}
 which arose to abstractly represent and manipulate tallies.
 Over the course of thousands of years, this system of counting numbers was 
 studied, expanded, and generalized to include zero, 
@@ -68,7 +66,7 @@ The goals of this episode are:
 \end{enumerate} 
 A good overview reference for some of the history is 
   \href{https://en.wikipedia.org/wiki/Number}{Wikipedia}.
-Hopefully the right-margin of this document is also a decent reference.
+Hopefully this document and the notes in its margins are also useful.
 
 \section{The integers}
 Actually, there is some debate about the definition of $\N$.  
@@ -127,7 +125,7 @@ work in the natural numbers!  So a solution is {\em created}, and called $-2$,
 and it satisfies the {\em defining} attribute that $2 + (-2) = 0$.
 
 I don't think that negative integers {\em exist} in the same way that positive integers do: you can {\em show} me $1$ apple, you can hold it in your hand,
-you can give it to me and I can take a bite out of it.  But you can't do any of that with $-1$ apples, and one has to invoke notions of debt (already a most abstract notion!) to make ``real world" sense of negative numbers. One of the central points I'd like to make is that mathematics is {\em best}---most complete, powerful, useful, beautiful---when we don't worry so much about ``real world" meaning or application of mathematical ideas or theories.  That is a counterintuitive idea, 
+you can give it to me and I can take a bite out of it.  But you can't do any of that with $-1$ apples, and one has to invoke notions of debt (already a most abstract notion!) to make ``real world" sense of negative numbers. One of the central points I'd like to make is that mathematics is {\em best}---most complete, powerful, useful, beautiful---when we don't worry so much about ``real world" meaning or application of mathematical ideas or theories.  That is a counter-intuitive idea, 
 as the real world has informed and spurned so much important mathematics, but the mathematics itself develops best untethered from these shackles of its origins.
 
 Now the integers are a lot better than the naturals, because they form a {\em ring}.  A ring is a set of numbers in which one can do arithmetic
@@ -192,11 +190,6 @@ we are taught from an early age to equate the concepts of {\em number} and {\em 
 much in the same way that rational numbers don't have a unique representation as a fraction.  In grade-school, one of my math teachers
 {\em insisted} that $1$ and $0.\overline{9}$ are {\em different} numbers, and no amount of reasoning would convince her otherwise.  But if you
 admit that decimal expansions represent numbers, and therefore must obey the basic laws of arithmetic (these are axiomatized!), then
-$1=0.\overline{9}$ is forced upon you, since:
-\[
-\frac{1}{3} = 0.\overline{3}
-\]
-by long division, so multiplying both sides by 3 yields $1=0.\overline{9}$.  
 \marginnote{\footnotesize This argument is intuitively convincing, but formal arguments are more complicated.  The classic argument taught to mathematics students uses the $(\epsilon, \delta)$-definition of a \emph{limit}, and can be unsatisfying because, at the introductory stage of a real-analysis course, it is not yet obvious to the students that such limits actually define equality.  Another approach is a proof based on infinite series.  We know that for all $r$, if $\abs{r}<1$, then: 
 
 \(\begin{aligned}
@@ -212,6 +205,11 @@ Plugging in $1/10$ for $r$, and $9$ for $a$, we get the following:
 
 This proof appears in Euler's 1770 \emph{Elements of Algebra}~\cite{euler.elements}.
 }
+$1=0.\overline{9}$ is forced upon you, since:
+\[
+\frac{1}{3} = 0.\overline{3}
+\]
+by long division, so multiplying both sides by 3 yields $1=0.\overline{9}$.  
 Said another way, whatever number $x=0.\overline{9}$
 is, it has to obey the rules of arithmetic, so has to satisfy $10x - x = 9$ since multiplication by 10 shifts the decimal to the right by 1, 
 and subtracting $x$ from this lops off the infinite repeating tail of $9's$.  But then $9x=9$, which again forces $x=1$.
@@ -228,17 +226,18 @@ For example:
 This just reflects the fact that if you truncate an arbitrary decimal expansion at any point, you will get a terminating decimal expansion, 
 which must therefore be a rational number.  
 From this point of view, the rational numbers are {\em not complete} with respect to the usual measure of distance given by absolute value:
+\marginnote{\footnotesize This distance function is a \emph{metric}.  The French mathematician Maurice Fr{\'e}chet initiated the study of metrics and metric spaces (spaces topologized by metrics) in 1905~\cite{frechet}.  Today metric spaces are fundamental to operations research, machine learning, algorithm design, and numerous other disciplines.
+}
 \[
 	d(x,y) := |x - y|.
 \]
-\marginnote{\footnotesize This distance function is a \emph{metric}.  The French mathematician Maurice Fr{\'e}chet initiated the study of metrics and metric spaces (spaces topologized by metrics) in 1905~\cite{frechet}.  Today metric spaces are fundamental to operations research, machine learning, algorithm design, and numerous other disciplines.
-}
 The reason is that there are lots of sequences of rationals as above, with the property that the distance between any two terms
 in the sequence gets smaller and smaller as you go out, but there is no ``final term", or limit, of the sequence within the system of 
 rational numbers.  In this way, the real numbers are the {\em completion} of the rationals with respect to the usual distance function above:
 they ``fill in'' all of the holes that the usual distance function perceives in the form of sequences whose terms get increasingly close together.
+\marginnote{\footnotesize Unfortunately, the $(\epsilon,\delta)$ definition of the limit is not part of the standard US high school calculus education.  I say ``unfortunately'' because the definition of the derivative \emph{is}, but it doesn't actually make much sense without also knowing the definition of the limit.  The powers that be finally share their secrets when you make it to advanced vector calculus or introductory real analysis~\cite{fitzpatrick2009advanced}.}
 Such sequences are called {\em Cauchy sequences}, after the French mathematician Augustin-Louis Cauchy (1789--1857), who
-was a pioneer of mathematical rigor in algebra and analysis,\marginnote{\footnotesize Unfortunately, the $(\epsilon,\delta)$ definition of the limit is not part of the standard US high school calculus eduction.  I say ``unfortunately'' because the definition of the derivative \emph{is}, but it doesn't actually make much sense without also knowing the definition of the limit.  The powers that be finally share their secrets when you make it to advanced vector calculus or introductory real analysis~\cite{fitzpatrick2009advanced}.}
+was a pioneer of mathematical rigor in algebra and analysis,
  and introduced the much-loathed (by students) notion of $(\epsilon,\delta)$
 arguments to Calculus.
 
@@ -246,10 +245,13 @@ The system of real numbers has many wonderful properties, including {\em continu
 in which to do calculus.  But they have some rather bizarre and frustrating features: there are continuous functions that are differentiable 
 nowhere, nonzero smooth functions which vanish identically on any closed subset, nonnegative integrable functions with zero integral, and so forth.
 
-\todo{Discussion of irrational, algebraic and transcendental numbers?}
+% \todo{Discussion of irrational, algebraic and transcendental numbers?}
 
 \section{$p$-Adic numbers}
-
+As explained above, the real numbers are created by ``filling in the holes" of the rational numbers that are detected by the
+usual distance function $d(x,y)=|x-y|$.  
+But this is {\em not} the only distance function on the rational numbers, and
+different distance functions will pick up on different ``holes", which
 \marginnote{
   \footnotesize $p$-Adic numbers were first explicitly discovered by the German
   mathematician Kurt Wilhelm Sebastian Hensel in 1897~\cite{hensel1897neue}.
@@ -270,11 +272,7 @@ nowhere, nonzero smooth functions which vanish identically on any closed subset,
   thinks intrinsically in terms of the mathematics itself, which he freely rewrites in his own notation 
   in order to better understand it and to speculate on what might have been passing through the mind of the ancient mathematician, without bothering to check the rest of the data.''~\cite{zeeman2008s}
 }
-
-As explained above, the real numbers are created by ``filling in the holes" of the rational numbers that are detected by the
-usual distance function $d(x,y)=|x-y|$.  
-But this is {\em not} the only distance function on the rational numbers, and
-different distance functions will pick up on different ``holes", which are filled in by entirely new systems of numbers!
+ are filled in by entirely new systems of numbers!
 To motivate this, which will seem very strange at first given our rich experience of the real numbers, consider the rational
 number 0.  This is arguably the {\em smallest} rational number by any sense of small since adding it to any other rational number
 does nothing.  But there is another {\em arithmetical} measure of smallness that zero satisfies: it is the only integer
@@ -349,7 +347,7 @@ like
 	&x^2 + y^2 = z^2\\
 \end{align*}
 Broadly construed, (algebraic) number theory is the study of such systems and their solutions.  
-Solving a system like tha above with $x,y,z$ {\em real numbers} is easy!  We can pick more or less
+Solving a system like the above with $x,y,z$ {\em real numbers} is easy!  We can pick more or less
 any values for $x$ and $y$ that we like, and then just solve for $z$.  This leads to lots of real solutions, like
 $$
 (x,y,z) = (1,1,\sqrt{2}), (1,2,\sqrt{5}), (2,3,\sqrt{13}),\cdots
